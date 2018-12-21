@@ -2,7 +2,19 @@ function sudokuCheck (boardStr) {
   let arr = [];
 
   arr = convertStrToArr(boardStr);
-  console.log(arr);
+
+  for(let n=0; n<arr[0].length; n++) {
+    if(checkRow(arr[n]) !== 9)
+      return false;
+  }
+  for(let n=0; n<arr[0].length; n++) {
+    if(checkCol(arr, n) !== 9)
+      return false;
+  }
+  for(let y=1; y<arr[0].length-2; y++)
+    for(let x=1; x<arr[0].length-2; x++) {
+      
+    }
 
   function convertStrToArr(boardStr) {
     let arr = [];
@@ -16,11 +28,19 @@ function sudokuCheck (boardStr) {
   }
   
   function checkRow(arr) {
-    
+    let res={}
+    for(let n=0; n<arr.length; n++) {
+      res[arr[n]]=arr[n];
+    }
+    return Object.keys(res).length;
   }
   
-  function checkCol(arr) {
-    
+  function checkCol(arr, x) {
+    let res={}
+    for(let n=0; n<arr[0].length; n++) {
+      res[arr[n][x]]=arr[n][x];
+    }
+    return Object.keys(res).length;
   }
   
   function check3x3(arr) {
