@@ -9,4 +9,3 @@ More information here.<br>
 <br>
 \n<br>
 <br>
-character. Check your console when submitting to see the input for yourself.<br>
